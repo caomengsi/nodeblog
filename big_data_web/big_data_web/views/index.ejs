@@ -1,0 +1,27 @@
+<%- include header %>
+<h1><%= title %></h1>
+
+<% if (arts){ %>
+   <ul>
+<% arts.forEach(function(art){  %>
+	
+	<li>
+	<ul>
+	<li> <h3><%= art.title %></h3></li>
+	<li> <%= art.tag %></li>
+	<li><%= art.author %></li>
+	<li><%= art.createTime %></li>
+	<li> <%= art.content %></li>
+	<br>
+	<span><a href='/remove/<%= art._id %>'>删除</a></span>
+	<span><a href='/edit/<%= art._id %>'>编辑</a></span>
+    </ul>
+
+    </div>
+    </li>
+
+ <% })%>
+</ul> 
+ <% } %> 
+    <p>Welcome to <%= title %></p>
+<%- include footer %>

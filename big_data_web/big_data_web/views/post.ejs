@@ -1,0 +1,55 @@
+<%- include header %>
+<div style="margin-top:30px" >
+<form role="form" action='/post' method="post" ng-controller="articleCtrl">
+  <div class="form-group">
+    <label for="name">标题</label>
+    <input type="text" class="form-control" name="title"  ng-model="title">
+  </div>
+   </br>
+
+   </br>
+ <div class="form-group">
+    <label for="tag">标签</label>
+     <label class="checkbox-inline">
+    <input type="radio" name="tag"  ng-model="tag" value="work" checked>工作
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" name="tag" ng-model="tag" value="love">爱情
+  </label>
+   <label class="checkbox-inline">
+    <input type="radio" name="tag" ng-model="tag" value="life">生活
+  </label>
+
+  </div>
+  </br>
+   <div class="form-group">
+    <label for="name">内容</label>
+    <textarea class="form-control" name='content' ng-model="content" rows="30"></textarea>
+  </div>
+   </br>
+
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+</div>
+<script src="/javascripts/angular.js"></script>
+<script>
+
+
+
+var app = angular.module('myArticle', []);
+app.controller('articleCtrl', function($scope) {
+
+  $scope.title = "<%=article.title%>"||'';
+   
+  
+  $scope.tag='<%=article.tag%>'||'';
+ 
+  $scope.content='<%=article.content%>'||'';
+
+
+
+});
+</script>
+
+<%- include footer %>
